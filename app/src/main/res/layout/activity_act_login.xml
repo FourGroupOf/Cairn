@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/BackgroundDark"
+    android:orientation="vertical"
+    tools:context=".ui.start.actLogin">
+
+    <ProgressBar
+        android:id="@+id/progressBar3"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progress="100"
+        android:progressTint="@color/OrangeDark" />
+
+    <TextView
+        android:id="@+id/lblHeadingWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="sans-serif-black"
+        android:padding="10dp"
+        android:text="@string/app_name"
+        android:textColor="#ffff"
+        android:textSize="49sp" />
+
+    <TextView
+        android:id="@+id/lblLoginHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:text="@string/LoginHeading"
+        android:textColor="#ffff"
+        android:textSize="24sp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="130dp"
+        android:progress="100"
+        android:progressTint="@color/OrangeDark" />
+
+    <EditText
+        android:id="@+id/edtLoginUsername"
+        android:layout_width="237dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="5dp"
+        android:autofillHints="@string/LoginHintUsername"
+        android:ems="10"
+        android:hint="@string/LoginHintUsername"
+        android:inputType="textEmailAddress"
+        android:textColor="#ffff"
+        android:textColorHint="#B5B5B5" />
+
+    <EditText
+        android:id="@+id/edtLoginPassword"
+        android:layout_width="237dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:autofillHints="@string/LoginHintPassword"
+        android:ems="10"
+        android:hint="@string/LoginHintPassword"
+        android:inputType="textPassword"
+        android:shadowColor="#fff"
+        android:textColor="#ffff"
+        android:textColorHint="#B5B5B5" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        style="@style/Widget.AppCompat.Button.Small"
+        android:layout_width="193dp"
+        android:layout_height="61dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/OrangeDark"
+        android:text="@string/LoginHeading" />
+
+
+    <TextView
+        android:id="@+id/AccountQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingTop="50dp"
+        android:paddingBottom="10dp"
+        android:text="Don't have an account?"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/btnGoToRegister"
+        style="@style/Widget.AppCompat.Button.Small"
+        android:layout_width="195dp"
+        android:layout_height="62dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/OrangeLight"
+        android:text="@string/RegisterButton" />
+
+</LinearLayout>
