@@ -18,9 +18,9 @@ Cairn is designed and built using java and the Android SDK in Android Studio.
 ---
 
 ## Credits
-Reuel T - 19012817
-Justine P - 19002561
-Justin - 19004389
-Emile - 19005768
+- Reuel T - 19012817
+- Justine P - 19002561
+- Justin - 19004389
+- Emile - 19005768
 
 
