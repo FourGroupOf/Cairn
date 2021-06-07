@@ -8,4 +8,11 @@
     <color name="BackgroundDark">#1a1c20</color>
     <color name="CardviewBack">#3E4249</color>
     <color name="stepsGreen">#76FF03</color>
+
+
+    <color name="Background">#263238</color>
+    <color name="CardViewBackground">#1d1d1d</color>
+    <color name="ButtonBackground">#0096a7</color>
+    <color name="TextColour">#ffffff</color>
+
 </resources>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:mapbox="http://schemas.android.com/apk/res-auto">
+
+    <com.mapbox.mapboxsdk.maps.MapView
+        android:id="@+id/mv_map_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        mapbox:mapbox_cameraTargetLat="38.9098"
+        mapbox:mapbox_cameraTargetLng="-77.0295"
+        mapbox:mapbox_cameraZoom="12" >
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnAddLocation"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="20dp"
+            android:layout_width="226dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/OrangeLight"
+            android:clickable="true"
+            android:src="@drawable/ic_baseline_add_location_24"
+            />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnSearch"
+            android:layout_gravity="start|bottom"
+            android:layout_margin="20dp"
+            android:layout_width="226dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/OrangeLight"
+            android:clickable="true"
+            android:src="@drawable/ic_baseline_search_24"
+            />
+
+    </com.mapbox.mapboxsdk.maps.MapView>
+
+    <Button
+        android:id="@+id/btn_start_navigation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:background="@color/OrangeLight"
+        android:text="@string/navigate"
+
+        android:visibility="invisible"/>
+
+</RelativeLayout>

@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.GOF.cairn.AuthHold;
 import com.GOF.cairn.IntentHelper;
 import com.GOF.cairn.R;
+import com.GOF.cairn.SavedPOI;
 import com.GOF.cairn.UserI;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -26,6 +27,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class actRegister extends AppCompatActivity {
 
@@ -81,13 +85,14 @@ public class actRegister extends AppCompatActivity {
                                         }
                                     });
 
-                                    helpIt.openIntentHome(actRegister.this);
+                                    helpIt.logout(actRegister.this); //logs user out after register to ensure proper login flow
 
                                 } else {                                                                        // If registration fails
                                     Toast.makeText(actRegister.this, "Reg Auth failed. Please try again", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         }).addOnFailureListener(e -> Toast.makeText(actRegister.this, e.getMessage(), Toast.LENGTH_SHORT).show());
+                helpIt.logout(actRegister.this); //logs user out after register to ensure proper login flow
             }
         });
 
@@ -119,8 +124,8 @@ public class actRegister extends AppCompatActivity {
             Toast.makeText(actRegister.this, "Please ensure all details entered", Toast.LENGTH_SHORT).show();
             return false;
         }
-
-        newUser = new UserI(luEmail,luFaveLand,luHomeAddr,luMS);
+        List<SavedPOI> lsFL = new ArrayList<>();
+        newUser = new UserI(luEmail,luFaveLand,luHomeAddr,lsFL,luMS);
         return true;
     }
 

@@ -55,6 +55,7 @@
         android:autofillHints="@string/LoginHintUsername"
         android:ems="10"
         android:hint="@string/LoginHintUsername"
+        android:text="pop@gmail.com"
         android:inputType="textEmailAddress"
         android:textColor="#ffff"
         android:textColorHint="#B5B5B5" />
@@ -67,6 +68,7 @@
         android:autofillHints="@string/LoginHintPassword"
         android:ems="10"
         android:hint="@string/LoginHintPassword"
+        android:text="pop1234"
         android:inputType="textPassword"
         android:shadowColor="#fff"
         android:textColor="#ffff"

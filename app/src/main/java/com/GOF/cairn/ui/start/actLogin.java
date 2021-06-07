@@ -90,7 +90,10 @@ public class actLogin extends AppCompatActivity {
                                         AuthHold.getInstance().loggedInUser = userValue.getValue(UserI.class);                                    //converts snapshot to UserInfo Class and sets user to local instance
                                     }
                                     Toast.makeText(actLogin.this, "User Data Downloaded", Toast.LENGTH_SHORT).show();
-                                    helpIt.openIntentHome(actLogin.this);
+                                    if (AuthHold.getInstance().loggedInUser != null){
+                                        helpIt.openIntentHome(actLogin.this);
+                                    }
+
                                 }
 
                                 @Override

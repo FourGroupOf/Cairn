@@ -1,12 +1,13 @@
 package com.GOF.cairn;
 
-import java.util.Date;
+import java.util.List;
 
 public class UserI {
 
     public String email;
-    public String favLandmark;  //enum
+    public String fLandType;  //enum
     public String homeAddr;
+    public List<SavedPOI> lsFavLandmarks;
     public boolean metric;
 
     public boolean getMetric() {
@@ -17,12 +18,14 @@ public class UserI {
         this.metric = metric;
     }
 
-    public UserI(String email, String favLandmark, String homeAddr, boolean metric) {
+    public UserI(String email, String fLandType, String homeAddr, List<SavedPOI> lsFavLandmarks, boolean metric) {
         this.email = email;
-        this.favLandmark = favLandmark;
+        this.fLandType = fLandType;
         this.homeAddr = homeAddr;
+        this.lsFavLandmarks = lsFavLandmarks;
         this.metric = metric;
     }
+
     public UserI(){}
 
     public String getEmail() {
@@ -33,12 +36,12 @@ public class UserI {
         this.email = email;
     }
 
-    public String getFavLandmark() {
-        return favLandmark;
+    public String getfLandType() {
+        return fLandType;
     }
 
-    public void setFavLandmark(String favLandmark) {
-        this.favLandmark = favLandmark;
+    public void setfLandType(String fLandType) {
+        this.fLandType = fLandType;
     }
 
     public String getHomeAddr() {
