@@ -1,58 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:orientation="horizontal">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@color/BackgroundDark">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="320dp"
+        card_view:cardBackgroundColor="@color/CardviewBack"
+        card_view:cardCornerRadius="8dp"
         card_view:cardElevation="10dp"
         card_view:cardUseCompatPadding="true"
-        card_view:contentPadding="10dp"
-        card_view:cardCornerRadius="8dp"
-        card_view:cardBackgroundColor="@color/CardViewBackground">
+        card_view:contentPadding="10dp">
 
-        <TextView
-            android:id="@+id/tv_landmarkHeading"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textColor="@color/TextColour"
-            android:textSize="22sp"
-            android:layout_gravity="center_horizontal"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tv_landmarkLocation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/LandmarkLocationPlaceholder"
-            android:textColor="@color/TextColour"
-            android:textSize="20sp"
-            android:layout_gravity="center"/>
+            <TextView
+                android:id="@+id/lblLandmarkHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="10dp"
+                android:text="Heading"
+                android:textColor="@color/TextColour"
+                android:textSize="22sp" />
 
-        <Button
-            android:id="@+id/btnViewLandmark"
-            style="@style/Widget.AppCompat.Button.Small"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|start"
-            android:textSize="20sp"
-            android:backgroundTint="@color/ButtonBackground"
-            android:gravity="center"
-            android:text="@string/SetWaypointButton" />
-        <Button
-            android:id="@+id/btnDeleteLandmark"
-            style="@style/Widget.AppCompat.Button.Small"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:textSize="20sp"
-            android:backgroundTint="@color/ButtonBackground"
-            android:gravity="center"
-            android:text="@string/DeleteLandmarkButton" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
+                <TextView
+                    android:id="@+id/lblLandmarkLongHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:text="Logitude:"
+                    android:textColor="@color/TextColour"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/lblLandmarkLong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:text="55"
+                    android:textColor="@color/TextColour"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lblLandmarkLatHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:text="Latitude:"
+                    android:textColor="@color/TextColour"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/lblLandmarkLat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:padding="10dp"
+                    android:text="66"
+                    android:textColor="@color/TextColour"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnViewLandmark"
+                    style="@style/Widget.AppCompat.Button.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="@color/OrangeLight"
+                    android:layout_gravity="center"
+                    android:text="@string/SetWaypointButton"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/btnDeleteLandmark"
+                    style="@style/Widget.AppCompat.Button.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/OrangeLight"
+                    android:layout_margin="10dp"
+                    android:layout_gravity="center"
+                    android:text="@string/DeleteLandmarkButton"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
 
     <View

@@ -6,20 +6,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.GOF.cairn.AuthHold;
 import com.GOF.cairn.R;
 import com.GOF.cairn.SavedPOI;
-import com.GOF.cairn.ui.favourites.dummy.DummyContent.DummyItem;
+import com.GOF.cairn.ui.start.actRegister;
+
 
 import java.util.List;
 
-/**
- * {@link RecyclerView.Adapter} that can display a {@link DummyItem}.
- * TODO: Replace the implementation with code for your data type.
- */
+
 public class MySavedPointsRecyclerViewAdapter extends RecyclerView.Adapter<MySavedPointsRecyclerViewAdapter.ViewHolder> {
 
     private final List<SavedPOI> mValues;
+
 
     public MySavedPointsRecyclerViewAdapter(List<SavedPOI> items) {
         mValues = items;
@@ -34,9 +35,11 @@ public class MySavedPointsRecyclerViewAdapter extends RecyclerView.Adapter<MySav
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
+        SavedPOI item = mValues.get(position);
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).content);
+        holder.llblLandName.setText(item.HeadingP);
+        holder.llblLong.setText(item.longitide + "");
+        holder.llblLat.setText(item.latitude + "");
     }
 
     @Override
@@ -46,20 +49,22 @@ public class MySavedPointsRecyclerViewAdapter extends RecyclerView.Adapter<MySav
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
-        public final TextView mIdView;
-        public final TextView mContentView;
-        public DummyItem mItem;
+        public final TextView llblLong;
+        public final TextView llblLat;
+        public final TextView llblLandName;
+        public SavedPOI mItem;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.swMetric);
-            mContentView = (TextView) view.findViewById(R.id.content);
+            llblLat= (TextView) view.findViewById(R.id.lblLandmarkLat);
+            llblLong = (TextView) view.findViewById(R.id.lblLandmarkLong);
+            llblLandName = (TextView) view.findViewById(R.id.lblLandmarkHeading);
         }
 
         @Override
         public String toString() {
-            return super.toString() + " '" + mContentView.getText() + "'";
+            return super.toString() + " '" + llblLandName.getText() + "'";
         }
     }
 }

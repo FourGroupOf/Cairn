@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/Background"
+    android:background="@color/BackgroundDark"
     android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/HowToHeading"
-        android:textColor="#ffff"
-        android:textSize="30sp"
         android:layout_gravity="center_horizontal"
-        android:padding="10dp"/>
+        android:padding="10dp"
+        android:text="@string/HowToHeading"
+        android:textColor="@color/OrangeDark"
+        android:textSize="30sp" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -28,11 +28,11 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
+                card_view:cardBackgroundColor="@color/CardviewBack"
+                card_view:cardCornerRadius="8dp"
                 card_view:cardElevation="10dp"
                 card_view:cardUseCompatPadding="true"
-                card_view:contentPadding="10dp"
-                card_view:cardCornerRadius="8dp"
-                card_view:cardBackgroundColor="@color/CardViewBackground">
+                card_view:contentPadding="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -45,28 +45,28 @@
                         android:layout_height="wrap_content"
                         android:text="@string/Question1"
                         android:textColor="@color/TextColour"
-                        android:textSize="26sp"/>
+                        android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/tv_answer1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
                         android:text="@string/Answer1"
                         android:textColor="@color/TextColour"
-                        android:textSize="22sp"
-                        android:layout_marginTop="20dp"/>
+                        android:textSize="16sp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="212dp"
+                card_view:cardBackgroundColor="@color/CardviewBack"
+                card_view:cardCornerRadius="8dp"
                 card_view:cardElevation="10dp"
                 card_view:cardUseCompatPadding="true"
-                card_view:contentPadding="10dp"
-                card_view:cardCornerRadius="8dp"
-                card_view:cardBackgroundColor="@color/CardViewBackground">
+                card_view:contentPadding="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -79,28 +79,28 @@
                         android:layout_height="wrap_content"
                         android:text="@string/Question2"
                         android:textColor="@color/TextColour"
-                        android:textSize="26sp"/>
+                        android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/tv_answer2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
                         android:text="@string/Answer2"
                         android:textColor="@color/TextColour"
-                        android:textSize="22sp"
-                        android:layout_marginTop="20dp"/>
+                        android:textSize="16sp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="224dp"
+                card_view:cardBackgroundColor="@color/CardviewBack"
+                card_view:cardCornerRadius="8dp"
                 card_view:cardElevation="10dp"
                 card_view:cardUseCompatPadding="true"
-                card_view:contentPadding="10dp"
-                card_view:cardCornerRadius="8dp"
-                card_view:cardBackgroundColor="@color/CardViewBackground">
+                card_view:contentPadding="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -113,16 +113,16 @@
                         android:layout_height="wrap_content"
                         android:text="@string/Question3"
                         android:textColor="@color/TextColour"
-                        android:textSize="26sp"/>
+                        android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/tv_answer3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
                         android:text="@string/Answer3"
                         android:textColor="@color/TextColour"
-                        android:textSize="22sp"
-                        android:layout_marginTop="20dp"/>
+                        android:textSize="16sp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -130,11 +130,11 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
+                card_view:cardBackgroundColor="@color/CardviewBack"
+                card_view:cardCornerRadius="8dp"
                 card_view:cardElevation="10dp"
                 card_view:cardUseCompatPadding="true"
-                card_view:contentPadding="10dp"
-                card_view:cardCornerRadius="8dp"
-                card_view:cardBackgroundColor="@color/CardViewBackground">
+                card_view:contentPadding="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -147,50 +147,16 @@
                         android:layout_height="wrap_content"
                         android:text="@string/Question4"
                         android:textColor="@color/TextColour"
-                        android:textSize="26sp"/>
+                        android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/tv_answer4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
                         android:text="@string/Answer4"
                         android:textColor="#ffff"
-                        android:textSize="22sp"
-                        android:layout_marginTop="20dp"/>
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                card_view:cardElevation="10dp"
-                card_view:cardUseCompatPadding="true"
-                card_view:contentPadding="10dp"
-                card_view:cardCornerRadius="8dp"
-                card_view:cardBackgroundColor="@color/CardViewBackground">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/tv_question5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Question5"
-                        android:textColor="#ffff"
-                        android:textSize="26sp"/>
-
-                    <TextView
-                        android:id="@+id/tv_answer5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/Answer5"
-                        android:textColor="#ffff"
-                        android:textSize="22sp"
-                        android:layout_marginTop="22dp"/>
+                        android:textSize="16sp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

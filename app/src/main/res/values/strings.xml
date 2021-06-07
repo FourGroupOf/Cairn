@@ -30,14 +30,12 @@
     <string name="login"><![CDATA[<- Login]]></string>
 
     <string-array name="arrLandmarkTypes">
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
+        <item>Recreational</item>
+        <item>Facilities</item>
+        <item>Historical</item>
+        <item>Food and Drink</item>
+        <item>Art and Culture</item>
+        <item>Entertainment</item>
     </string-array>
 
 
@@ -54,19 +52,18 @@
 
 
     <!--How To-->
-    <string name="HowToHeading">HOW TO</string>
+    <string name="HowToHeading">How-to Guide</string>
 
-    <string name="Question1">Question 1</string>
-    <string name="Question2">Question 2</string>
-    <string name="Question3">Question 3</string>
-    <string name="Question4">Question 4</string>
-    <string name="Question5">Question 5</string>
+    <string name="Question1">How do I change my profile settings?</string>
+    <string name="Question2">How do I favourite a location?</string>
+    <string name="Question3">How do I get step by step directions to my destination?</string>
+    <string name="Question4">How do I report road closures?</string>
 
-    <string name="Answer1">Answer 1</string>
-    <string name="Answer2">Answer 2</string>
-    <string name="Answer3">Answer 3</string>
-    <string name="Answer4">Answer 4</string>
-    <string name="Answer5">Answer 5</string>
+    <string name="Answer1">Select \"Preferences\" tab on the navigation bar. Click on the setting you want to change and edit the information. Ensure that you save the changes made by clicking the Save button.</string>
+    <string name="Answer2">Click on the location on the map that you want to favourite or search for. Select the button with the pin icon in the bottom right hand corner of the screen. You will prompted to provide a name for the location to be added to your favourites.</string>
+    <string name="Answer3">Once you have picked or searched for a location on the map, click the Navigate button. In the navigation screen that appears, click on the banner to see a list of step by step directions.</string>
+    <string name="Answer4">On the navigation screen, click the text bubble icon. A list of options will pop up at the bottom of the screen. Select the option that you want to report.</string>
+
 
 
     <!--Register Activity-->

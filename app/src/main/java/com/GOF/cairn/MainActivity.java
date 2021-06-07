@@ -2,33 +2,15 @@ package com.GOF.cairn;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Toast;
 
-import com.GOF.cairn.ui.favourites.FavFragment;
+import com.GOF.cairn.ui.favourites.FavLFragment;
 import com.GOF.cairn.ui.map.MapMFragment;
 import com.GOF.cairn.ui.preferences.PreferenceFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.mapbox.android.core.permissions.PermissionsListener;
-import com.mapbox.android.core.permissions.PermissionsManager;
-import com.mapbox.mapboxsdk.Mapbox;
-import com.mapbox.mapboxsdk.camera.CameraPosition;
-import com.mapbox.mapboxsdk.location.LocationComponent;
-import com.mapbox.mapboxsdk.location.LocationComponentActivationOptions;
-import com.mapbox.mapboxsdk.location.modes.CameraMode;
-import com.mapbox.mapboxsdk.location.modes.RenderMode;
-import com.mapbox.mapboxsdk.maps.MapView;
-import com.mapbox.mapboxsdk.maps.MapboxMap;
-import com.mapbox.mapboxsdk.maps.MapboxMapOptions;
-import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
-import com.mapbox.mapboxsdk.maps.Style;
-import com.mapbox.mapboxsdk.maps.SupportMapFragment;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity  {
 
@@ -103,7 +85,7 @@ public class MainActivity extends AppCompatActivity  {
                             selectedFragment = new MapMFragment();
                             break;
                         case R.id.navigation_Fav:
-                            selectedFragment  = new FavFragment();
+                            selectedFragment  = new FavLFragment();
                             break;
                     }
 

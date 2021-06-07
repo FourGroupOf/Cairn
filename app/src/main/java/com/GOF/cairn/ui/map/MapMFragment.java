@@ -1,10 +1,13 @@
 package com.GOF.cairn.ui.map;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.PointF;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
@@ -25,6 +28,8 @@ import com.GOF.cairn.IntentHelper;
 import com.GOF.cairn.R;
 import com.GOF.cairn.SavedPOI;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.gson.JsonElement;
 import com.mapbox.android.core.permissions.PermissionsListener;
 import com.mapbox.android.core.permissions.PermissionsManager;
 import com.mapbox.api.directions.v5.models.DirectionsResponse;
@@ -59,6 +64,7 @@ import com.mapbox.services.android.navigation.v5.navigation.NavigationRoute;
 import java.sql.Savepoint;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -233,8 +239,8 @@ public class MapMFragment extends Fragment implements OnMapReadyCallback, Mapbox
 
         getRoute(originPoint, destinationPoint);
         btnNavigate.setEnabled(true);
-        //btnNavigate.setBackgroundResource(R.color.ButtonBackground);
         btnNavigate.setVisibility(View.VISIBLE);
+        handleClickIcon(mapboxMap.getProjection().toScreenLocation(point));
         return true;
     }
 
@@ -411,4 +417,78 @@ public class MapMFragment extends Fragment implements OnMapReadyCallback, Mapbox
             NavigationLauncher.startNavigation(getActivity(), options); // Call this method with Context from within an Activity
         }
     };
+
+
+    private boolean handleClickIcon(PointF screenPoint) {
+        List<Feature> features = mapboxMap.queryRenderedFeatures(screenPoint);
+        if (!features.isEmpty()) {
+
+            String output = "";
+            Feature feature = features.get(0);
+
+            StringBuilder stringBuilder = new StringBuilder();
+
+            if (feature.properties() != null) {
+                for (Map.Entry<String, JsonElement> entry : feature.properties().entrySet()) {
+                    stringBuilder.append(String.format("%s - %s", entry.getKey(), entry.getValue()));
+                    stringBuilder.append(System.getProperty("line.separator"));
+
+                    switch (entry.getKey()) {
+                        case "type":
+                            output += "Type: " + formatString(entry.getValue() + "\n");
+                            break;
+                        case "class":
+                            output += "Category: " + formatString(entry.getValue() + "\n");
+                            break;
+                        // case "category_en":
+                        //     output += "Category: " + formatString(entry.getValue() + "\n");
+                        //     break;
+                        case "name":
+                            output +=  "Name: " + formatString(entry.getValue() + "\n");
+                            break;
+                        //case "name_en":
+                        //   output += "Name: " + formatString(entry.getValue() + "\n");
+                        //    break;
+                        // case "maki":=
+                        //    output += entry.getKey() + " " + formatString(entry.getValue() + "\n");
+                        //    break;
+                        default:
+                            // code block
+                    }
+                }
+
+                Log.i("Info", stringBuilder.toString());
+
+                if (output.length() != 0) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                    builder.setMessage(output)
+                            .setCancelable(false)
+                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+
+                                }
+                            });
+                    AlertDialog alert = builder.create();
+                    alert.show();
+                }
+            }
+
+        } else {
+            Snackbar.make(getView(), "No location data.", Snackbar.LENGTH_LONG).show();
+        }
+        return true;
+    }
+    public String formatString(String entry) {
+        String formatted = "";
+
+        formatted = entry.replace("\"", "");
+        formatted = formatted.replace("_", " ");
+        formatted = formatted.substring(0, 1).toUpperCase() + formatted.substring(1);
+
+        return formatted;
+    }
+
+
+
+
 }

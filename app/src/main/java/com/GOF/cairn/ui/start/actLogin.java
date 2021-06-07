@@ -40,6 +40,8 @@ public class actLogin extends AppCompatActivity {
     public DatabaseReference myRefFitnessR;                                         // for user data record
     public DatabaseReference myRefUsers;
 
+    public boolean login = true;
+
 
 
     @Override
@@ -59,6 +61,7 @@ public class actLogin extends AppCompatActivity {
         setContentView(R.layout.activity_act_login);
         assignComponents();
         mAuth = FirebaseAuth.getInstance();                 //for authentication
+        login = false;
 
         lbtnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,7 +79,7 @@ public class actLogin extends AppCompatActivity {
                         if (task.isSuccessful()) {                                                                                                  //success login
                             AuthHold.getInstance().fireUser = mAuth.getCurrentUser();                                                               //sets local instance of firebase user
                             Toast.makeText(actLogin.this, "Logged in " + mAuth.getCurrentUser().getEmail(),Toast.LENGTH_SHORT).show();  //displays welcome message
-
+                             login = true;
                             //////////////////////////////////////////////////////////////////////////////////////////////
                             //Find User Info
                             //////////////////////////////////////////////////////////////////////////////////////////////
@@ -90,7 +93,7 @@ public class actLogin extends AppCompatActivity {
                                         AuthHold.getInstance().loggedInUser = userValue.getValue(UserI.class);                                    //converts snapshot to UserInfo Class and sets user to local instance
                                     }
                                     Toast.makeText(actLogin.this, "User Data Downloaded", Toast.LENGTH_SHORT).show();
-                                    if (AuthHold.getInstance().loggedInUser != null){
+                                    if (AuthHold.getInstance().loggedInUser != null && login ){
                                         helpIt.openIntentHome(actLogin.this);
                                     }
 

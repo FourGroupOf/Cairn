@@ -11,28 +11,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.GOF.cairn.AuthHold;
 import com.GOF.cairn.R;
-import com.GOF.cairn.ui.favourites.dummy.DummyContent;
 
-/**
- * A fragment representing a list of Items.
- */
+
+
 public class FavLFragment extends Fragment {
 
-    // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
-    // TODO: Customize parameters
     private int mColumnCount = 1;
-
-    /**
-     * Mandatory empty constructor for the fragment manager to instantiate the
-     * fragment (e.g. upon screen orientation changes).
-     */
     public FavLFragment() {
     }
 
-    // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
     public static FavLFragment newInstance(int columnCount) {
         FavLFragment fragment = new FavLFragment();
@@ -65,7 +57,12 @@ public class FavLFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MySavedPointsRecyclerViewAdapter(DummyContent.ITEMS));
+            if (AuthHold.getInstance().loggedInUser.lsFavLandmarks == null){
+                Toast.makeText(getActivity(), "No favourites added", Toast.LENGTH_SHORT).show();
+            } else{
+                recyclerView.setAdapter(new MySavedPointsRecyclerViewAdapter(AuthHold.getInstance().loggedInUser.lsFavLandmarks)); //passes user POI to recycler view
+            }
+
         }
         return view;
     }
